@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=3 uid="uid://je4gud6cgocc"]
+
+[ext_resource type="Script" path="res://scenes/user interface/game_over.gd" id="1_60cfo"]
+[ext_resource type="Theme" uid="uid://ceti42uci4b60" path="res://scenes/user interface/main_theme.tres" id="1_h28xg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v10ml"]
+font_size = 80
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_60cfo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.376471)
+
+[node name="LaserCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.225
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.5
+offset_top = -36.0
+offset_right = 279.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("1_h28xg")
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_v10ml")
+horizontal_alignment = 1
+
+[node name="LaserCounter2" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.226
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.5
+offset_top = -36.0
+offset_right = 279.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="MenuBar" parent="LaserCounter2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="LaserCounter2/VBoxContainer/MenuBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_right = 66.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("1_h28xg")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "RESTART"
+flat = true
+
+[connection signal="pressed" from="LaserCounter2/VBoxContainer/MenuBar/Button" to="." method="_on_button_pressed"]

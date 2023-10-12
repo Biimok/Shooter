@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://5kefca0jqva0"]
+
+[ext_resource type="PackedScene" uid="uid://c6wx0yu6kpxmj" path="res://scenes/levels/level.tscn" id="1_qno5l"]
+[ext_resource type="Texture2D" uid="uid://cyyjfhcytvd76" path="res://graphics/ground/stones.png" id="2_vlv8j"]
+[ext_resource type="TileSet" uid="uid://dwl6n1p8feuyx" path="res://scenes/levels/outside.tres" id="3_mj4av"]
+[ext_resource type="PackedScene" uid="uid://dya1va4uabnj" path="res://scenes/enemies/drone.tscn" id="4_hm6bv"]
+
+[node name="TestLevel" instance=ExtResource("1_qno5l")]
+
+[node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+texture_repeat = 2
+scale = Vector2(1.18789, 1.10377)
+texture = ExtResource("2_vlv8j")
+region_enabled = true
+region_rect = Rect2(-6587.2, 32.387, 20000, 15000)
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="Ground" index="1"]
+tile_set = ExtResource("3_mj4av")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65535, 0, 1, 1, 0, 2, 65537, 0, 3)
+
+[node name="Drone" parent="Enemies" index="0" instance=ExtResource("4_hm6bv")]
+position = Vector2(780, 216)
+
+[node name="Player" parent="." index="6"]
+position = Vector2(-336, 224)
+
+[node name="Lights" parent="." index="7"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
