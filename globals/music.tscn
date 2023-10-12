@@ -7,3 +7,4 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ukg48")
 volume_db = -30.0
+autoplay = true
