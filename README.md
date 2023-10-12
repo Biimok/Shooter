@@ -2,5 +2,5 @@
 
 ## Recursos principais que faltam
 
-  - Jogo ainda sem objetivo final
+  - Sem objetivo final
   - Falta menu
